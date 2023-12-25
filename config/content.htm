@@ -637,6 +637,7 @@ int main(int argc, char** argv) {
 <p>// 印出乘積<br/> printf("上述兩個整數的乘積 = %d\n", result);<br/>}</p>
 <p><img alt="" height="149" src="/images/10.png" width="495"/></p>
 <h1>C.EX</h1>
+<p>WEEK1</p>
 <p>1.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 void main()
@@ -644,7 +645,7 @@ void main()
  /* 印出 Hello */
 printf("Hello World!");
 }</pre>
-<img alt="" height="39" src="/images/c1.png" width="201"/>
+<p><img alt="" height="39" src="/images/c1.png" width="201"/></p>
 <p>2.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 int main()
@@ -757,7 +758,257 @@ printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
 printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
 printf("%d \n", ~a ); /* A 的補數運算 */
 }</pre>
-<p><img alt="" height="110" src="/images/c10.png" width="158"/></p><h1>Brython</h1>
+<p><img alt="" height="110" src="/images/c10.png" width="158"/></p>
+<p>WEEK2</p>
+<p>1.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+int main() {
+    char c;
+     
+    printf("輸入字符：");
+    c = getchar(); /* 讀取輸入的字符 */
+     
+    printf("輸入的字符是：");
+    putchar(c); /* 顯示輸入的字符 */
+     
+    return 0;
+}</pre>
+<p><img alt="" height="28" src="/images/e.ex-1.png" width="167"/></p>
+<p>2.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+int main()
+{
+    int this_is_a_number1, this_is_a_number2, total;
+ 
+    printf("請輸入一個整數: \n");
+    scanf("%d", &amp;this_is_a_number1); /* 讀取第一個整數 */
+    printf("您輸入了 %d\n", this_is_a_number1);
+ 
+    printf("請輸入另一個整數: \n");
+    scanf("%d", &amp;this_is_a_number2); /* 讀取第二個整數 */
+    printf("您輸入了 %d\n", this_is_a_number2);
+ 
+    total = this_is_a_number1 + this_is_a_number2; /* 將兩個數字相加 */
+    printf("總和為 %d\n", total);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="128" src="/images/e.ex-2.png" width="259"/></p>
+<p>3.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+int main()
+{
+    float this_is_a_number1, this_is_a_number2, total;
+ 
+    printf("請輸入一個數字: \n");
+    scanf("%f", &amp;this_is_a_number1); /* 讀取第一個浮點數 */
+    printf("您輸入了 %f\n", this_is_a_number1);
+ 
+    printf("請輸入另一個數字: \n");
+    scanf("%f", &amp;this_is_a_number2); /* 讀取第二個浮點數 */
+    printf("您輸入了 %f\n", this_is_a_number2);
+ 
+    total = this_is_a_number1 + this_is_a_number2; /* 將兩個數字相加 */
+    printf("總和為 %f\n", total);
+ 
+    return 0;
+}
+</pre>
+<p><img alt="" height="135" src="/images/e.ex-3.png" width="264"/></p>
+<p>4.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+int main()
+{
+    float this_is_a_number1, this_is_a_number2, total;
+ 
+    printf("請輸入一個數字: \n");
+    scanf("%f", &amp;this_is_a_number1); /* 讀取第一個浮點數 */
+    printf("您輸入了 %f\n", this_is_a_number1);
+ 
+    printf("請輸入另一個數字: \n");
+    scanf("%f", &amp;this_is_a_number2); /* 讀取第二個浮點數 */
+    printf("您輸入了 %f\n", this_is_a_number2);
+ 
+    total = this_is_a_number1 * this_is_a_number2; /* 將兩個數字相乘 */
+    printf("乘積為 %f\n", total);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="129" src="/images/e.ex-4.png" width="234"/></p>
+<p>5.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+int main()
+{
+    float this_is_a_number1, this_is_a_number2, total;
+ 
+    printf("請輸入一個數字: \n");
+    scanf("%f", &amp;this_is_a_number1); /* 讀取第一個浮點數 */
+    printf("您輸入了 %f\n", this_is_a_number1);
+ 
+    printf("請輸入另一個數字: \n");
+    scanf("%f", &amp;this_is_a_number2); /* 讀取第二個浮點數 */
+    printf("您輸入了 %f\n", this_is_a_number2);
+ 
+    total = this_is_a_number1 / this_is_a_number2; /* 將兩個數字相除 */
+    printf("商為 %f\n", total);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="127" src="/images/e.ex-5.png" width="231"/></p>
+<p>6.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+ 
+/* 示範使用 for 迴圈的程式 */
+int main()
+{
+    float this_is_a_number, total = 0;
+    int i;
+ 
+    /* 使用 for 迴圈執行 10 次 */
+    for (i = 0; i &lt; 10; i++)
+    {
+        printf("請輸入一個數字:\n ");
+        scanf("%f", &amp;this_is_a_number); /* 讀取數字 */
+        total = total + this_is_a_number;
+    }
+ 
+    printf("總和為 = %f\n", total);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="357" src="/images/e.ex-6.png" width="236"/></p>
+<p>7.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+/* 示範使用巢狀 for 迴圈的程式 */
+int main()
+{
+    float this_is_a_number, total = 0;
+    int i, j;
+ 
+    /* 外層的 for 迴圈執行 10 次 */
+    for (i = 0; i &lt; 10; i++)
+    {
+        /* 內層的 for 迴圈執行 2 次 */
+        for (j = 0; j &lt; 2; j++)
+        {
+            printf("請輸入一個數字:\n ");
+            scanf("%f", &amp;this_is_a_number); /* 讀取數字 */
+            total = total + this_is_a_number;
+        }
+    }
+ 
+    printf("總和為 = %f\n", total);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="678" src="/images/e.ex-7.png" width="221"/></p>
+<p>8.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+/* 示範使用 do-while 迴圈的程式 */
+int main()
+{
+    float this_is_a_number, total = 0;
+    int i = 0;
+ 
+    /* do-while 迴圈會一直執行，直到 i 的值達到 10 */
+    do
+    {
+        printf("請輸入一個數字:\n ");
+        scanf("%f", &amp;this_is_a_number); /* 讀取數字 */
+        total = total + this_is_a_number;
+        i++;
+    } while (i &lt; 10);
+ 
+    printf("總和為 = %f\n", total);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="359" src="/images/e.ex-8.png" width="208"/></p>
+<p>9.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+/* 示範使用 switch 選擇結構的程式 */
+int main()
+{
+    int this_is_a_number;
+     
+    printf("請輸入介於1和5之間的整數:\n ");
+    scanf("%d", &amp;this_is_a_number);
+ 
+    switch (this_is_a_number)
+    {
+    case 1:
+        printf("Case1: 值為: %d", this_is_a_number);
+        break;
+    case 2:
+        printf("Case2: 值為: %d", this_is_a_number);
+        break;
+    case 3:
+        printf("Case3: 值為: %d", this_is_a_number);
+        break;
+    case 4:
+        printf("Case4: 值為: %d", this_is_a_number);
+        break;
+    case 5:
+        printf("Case5: 值為: %d", this_is_a_number);
+        break;
+    default:
+        printf("錯誤！輸入值為: %d", this_is_a_number); /* 輸入的數字不在1和5之間 */
+    }
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="70" src="/images/e.ex-9.png" width="328"/></p>
+<p>10.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+ 
+/* 示範使用 switch 依據輸入的字元進行選擇的程式 */
+int main()
+{
+    char this_is_a_character;
+     
+    printf("請輸入字元 a、b、c、d 或 e:\n ");
+    scanf(" %c", &amp;this_is_a_character); // 注意在 %c 前面加上空格，以避免吸收上一次的換行字元
+ 
+    switch (this_is_a_character)
+    {
+    case 'a':
+        printf("輸入了 a");
+        break;
+    case 'b':
+        printf("輸入了 b");
+        break;
+    case 'c':
+        printf("輸入了 c");
+        break;
+    case 'd':
+        printf("輸入了 d");
+        break;
+    case 'e':
+        printf("輸入了 e");
+        break;
+    default:
+        printf("預設 ");
+    }
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="72" src="/images/e.ex-10.png" width="307"/></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>

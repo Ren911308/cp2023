@@ -637,7 +637,127 @@ int main(int argc, char** argv) {
 <p>// 印出乘積<br/> printf("上述兩個整數的乘積 = %d\n", result);<br/>}</p>
 <p><img alt="" height="149" src="/images/10.png" width="495"/></p>
 <h1>C.EX</h1>
-<h1>Brython</h1>
+<p>1.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
+}</pre>
+<img alt="" height="39" src="/images/c1.png" width="201"/>
+<p>2.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="44" src="/images/c2.png" width="269"/><br/><br/></p>
+<p>3.</p>
+<p>#include &lt;stdio.h&gt;<br/>int main()<br/>{<br/>int a = 1;<br/>int A = 8;<br/>int b = 2, c;<br/>c = A - a + b;<br/>/* 輸出 a, A, b, c 到螢幕 */<br/>printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );<br/>return 0;<br/>}</p>
+<p><img alt="" height="44" src="/images/c3.png" width="315"/></p>
+<p>4.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}
+</pre>
+<p><img alt="" height="39" src="/images/c4.png" width="302"/><br/><br/></p>
+<p>5.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img alt="" height="35" src="/images/c5.png" width="331"/></p>
+<p>6.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 64;
+    int b = 0x40;
+    long c = 64L;
+    printf("%d, %d, %ld", a, b, c);
+    return 0;
+}</pre>
+<p><img alt="" height="43" src="/images/c6.png" width="179"/></p>
+<p>7.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p><img alt="" height="51" src="/images/c7.png" width="221"/><br/><br/></p>
+<p>8.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="100" src="/images/c8.png" width="174"/></p>
+<p>9.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="222" src="/images/c9.png" width="172"/></p>
+<p>10.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="110" src="/images/c10.png" width="158"/></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
