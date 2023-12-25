@@ -528,7 +528,8 @@ int main() {
     return 0;
 }</pre>
 <p><img alt="" height="300" src="/images/hellogd2.png" width="400"/></p>
-<p></p><h1>W13</h1>
+<p></p>
+<h1>W13</h1>
 <p>一開始都聽不懂老師的意思，只能不停地向同學請教，想辦法不要落後，努力跟上進度，抱持虛心求教的心態，為了要提升自己的能力，就要一直反覆看老師上課影的片，很常遇到不懂的問題，不知該如何解決就會去問ChatGPT，雖然到現在還是會常常看不懂問題在哪裡，但是只要一步一腳印地去尋找問題，就會發現一點之蛛絲馬跡，然後再去解決問題，在解決不了就只能去尋求同學的幫助，雖然我很想問同組的，但是同組不太會只能跟不同組的虛心求教，也學到一些之前從未接觸到的東西，例如:近端、遠端、架設個人網站，帶著隨身碟就可以編輯網站等。     計算機這一門課，不只可以寫程式還可以了解程式。還可以培養讓我有自行解決問題的能力，真的獲益良多，雖然有些時候還是不得不尋求幫助，但也是不得已的時候會這麼做，不然一定是自己想辦法去解決，還能提升邏輯思考的能力，還有就算做錯只要留下記錄，搞不好會在不知不覺間開閉自己的道路，就像威爾鋼，就是這麼被發明出來的，可能乍看之下沒有什麼，其實可能有其他用處，真是受益匪淺。</p>
 <h1>w15</h1>
 <p><img alt="" height="225" src="/images/26.png" width="400"/></p>
@@ -634,7 +635,129 @@ int main(int argc, char** argv) {
 <p>// 提示使用者輸入並將其存儲在 'y'<br/> printf("輸入第二個整數：");<br/> scanf("%d", &amp;y);</p>
 <p>result = x * y; // 計算 'x' 和 'y' 的乘積</p>
 <p>// 印出乘積<br/> printf("上述兩個整數的乘積 = %d\n", result);<br/>}</p>
-<p><img alt="" height="149" src="/images/10.png" width="495"/></p><h1>Brython</h1>
+<p><img alt="" height="149" src="/images/10.png" width="495"/></p>
+<h1>C.EX</h1>
+<p>1.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+ /* 印出 Hello */
+printf("Hello World!");
+}</pre>
+<img alt="" height="39" src="/images/c1.png" width="201"/>
+<p>2.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+/* 印出 Hello World! Bye Bye */
+printf("Hello World! ");
+printf("Bye ");
+printf("Bye");
+return 0;
+}</pre>
+<p><img alt="" height="44" src="/images/c2.png" width="269"/><br/><br/></p>
+<p>3.</p>
+<p>#include &lt;stdio.h&gt;<br/>int main()<br/>{<br/>int a = 1;<br/>int A = 8;<br/>int b = 2, c;<br/>c = A - a + b;<br/>/* 輸出 a, A, b, c 到螢幕 */<br/>printf( "a = %d, A = %d, b = %d, c = %d ", a, A, b, c );<br/>return 0;<br/>}</p>
+<p><img alt="" height="44" src="/images/c3.png" width="315"/></p>
+<p>4.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+void main()
+{
+float a = 0.5;
+double b = 1.2;
+int c = 3;
+b = b + a + c;
+/* 輸出 a, b, c 到螢幕 */
+printf( " a = %3.1f, b = %3.1f, c = %d ", a ,b, c );
+}
+</pre>
+<p><img alt="" height="39" src="/images/c4.png" width="302"/><br/><br/></p>
+<p>5.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+char x, y;
+x = 'a';
+y = (char)97;
+/* 輸出 x, y, x, 最後一個是以 ASCII 值顯示 y */
+printf( " x = %c, y = %c, ASCII of y = %d", x, y, y );
+return 0;
+}</pre>
+<p><img alt="" height="35" src="/images/c5.png" width="331"/></p>
+<p>6.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 64;
+    int b = 0x40;
+    long c = 64L;
+    printf("%d, %d, %ld", a, b, c);
+    return 0;
+}</pre>
+<p><img alt="" height="43" src="/images/c6.png" width="179"/></p>
+<p>7.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int i;
+printf("Input an integer:");
+scanf( "%d", &amp;i ); /* ch 前面加個 &amp;(位址運算元) */
+printf( "the number is %d", i );
+return 0;
+}</pre>
+<p><img alt="" height="51" src="/images/c7.png" width="221"/><br/><br/></p>
+<p>8.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+int main()
+{
+int a,b;
+a = 10; b = 3;
+printf( "%d \n", a * b );
+printf( "%d \n", a / b );
+printf( "%d \n", a + b );
+printf( "%d \n", a - b );
+printf( "%d \n", a % b );
+return 0;
+}</pre>
+<p><img alt="" height="100" src="/images/c8.png" width="174"/></p>
+<p>9.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+int main()
+{
+int a = 10, b = 5;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+printf( "\n" );
+b = 10;
+printf( " a == b is %d \n", a == b );
+printf( " a &gt; b is %d \n", a &gt; b );
+printf( " a &lt; b is %d \n", a &lt; b );
+printf( " a &gt;= b is %d \n", a &gt;= b );
+printf( " a &lt;= b is %d \n", a &lt;= b );
+printf( " a != b is %d \n", a != b );
+return 0;
+}</pre>
+<p><img alt="" height="222" src="/images/c9.png" width="172"/></p>
+<p>10.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include&lt;stdio.h&gt;
+void main()
+{
+int a,b;
+a = 15;
+b = 1;
+printf("%d \n", a | b ); /* a OR b */
+printf("%d \n", a &amp; b ); /* a AND b */
+printf("%d \n", a ^ b ); /* a XOR b */
+printf("%d \n", a &lt;&lt; 1 ); /* a 位元左移 1 位 */
+printf("%d \n", a &gt;&gt; 1 ); /* a 位元右移一位 */
+printf("%d \n", ~a ); /* A 的補數運算 */
+}</pre>
+<p><img alt="" height="110" src="/images/c10.png" width="158"/></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
