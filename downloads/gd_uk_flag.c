@@ -135,4 +135,4 @@ void draw_uk_flag(gdImagePtr img) {
     // 绘制红色十字
     gdImageFilledRectangle(img, center_x + 1.5 * cross_width, 0, center_x - 1.5 * cross_width, height, red);
     gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
-}c
+}
