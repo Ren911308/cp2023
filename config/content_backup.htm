@@ -1,6 +1,7 @@
 <h1>About</h1>
-<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite </a></p>
-<h1>w5</h1>
+<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
+<h1>作業內容</h1>
+<h2>w5</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 // https://blog.csdn.net/weixin_38468077/article/details/101069365
 // http://www.gnuplot.info/demo/
@@ -45,7 +46,7 @@ int main() {
     return 0;
 }</pre>
 <p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
-<h1>w6</h1>
+<h2>w6</h2>
 <div>
 <div class="syntaxhighlighter cpp" id="highlighter_351606">
 <table border="0" cellpadding="0" cellspacing="0">
@@ -69,7 +70,8 @@ int main() {
 </div>
 </div>
 <p></p>
-<p>利用這些程式庫繪製出各國國旗</p><h3>ROC</h3>
+<p>利用這些程式庫繪製出各國國旗</p>
+<p>ROC</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
 // 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621
 // cc roc_flag_in_gd.c -lgd -lm to link with gd and math library
@@ -193,7 +195,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     }
 }</pre>
 <p><img alt="" height="267" src="/images/roc_flag_in_gd.png" width="400"/></p>
-<h2>USA</h2>
+<h3>USA</h3>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -283,7 +285,7 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
     gdImageFilledPolygon(img, points, 10, color);
 }</pre>
 <p><img alt="" height="211" src="/images/usa_flag.png" width="400"/></p>
-<h2>JAPAN</h2>
+<h3>JAPAN</h3>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -345,7 +347,8 @@ void draw_red_sun(gdImagePtr img, int x, int y, int size, int color) {
 }</pre>
 <p><img alt="" height="267" src="/images/japan_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1004">
-<source src="/images/1.mp4" type="video/mp4"/></video></p><h2>PROC</h2>
+<source src="/images/1.mp4" type="video/mp4"/></video></p>
+<h3>PROC</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -430,7 +433,7 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
     gdImageFilledPolygon(img, points, 10, color);
 }</pre>
 <p><img alt="" height="267" src="/images/proc_flag.png" width="400"/></p>
-<h2>UK</h2>
+<h3>UK</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -569,7 +572,8 @@ void draw_uk_flag(gdImagePtr img) {
     gdImageFilledRectangle(img, center_x + 1.5 * cross_width, 0, center_x - 1.5 * cross_width, height, red);
     gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
 }</pre>
-<p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p><h2>KOREA</h2>
+<p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p>
+<h3>KOREA</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -931,7 +935,7 @@ if (outputFile == NULL) {
   }
 </pre>
 <p><img alt="" height="267" src="/images/korea_flag.png" width="400"/></p>
-<h2>VIATNAM</h2>
+<h3>VIATNAM</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -984,7 +988,7 @@ int main() {
 }
 </pre>
 <p><img alt="" height="267" src="/images/vietnam_flag.png" width="400"/></p>
-<h2>BANGLEDESH</h2>
+<h3>BANGLEDESH</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -1020,7 +1024,8 @@ int main() {
     drawBangladeshFlag();
     return 0;
 }</pre>
-<p><img alt="" height="267" src="/images/bangladesh_flag.png" width="400"/><br/><br/></p><h1>w10</h1>
+<p><img alt="" height="267" src="/images/bangladesh_flag.png" width="400"/><br/><br/></p>
+<h2>w10</h2>
 <p>線上簡報、網誌與多媒體影片製作工具:</p>
 <p><a href="https://leo-editor.github.io/leo-editor/">Leo Editor</a><span> </span>(<a href="https://groups.google.com/g/leo-editor">討論群組</a>) 為大綱管理系統, 可以當作程式開發的 IDE (Integrated Development Environment) 使用, 可用來編輯 reveal.js 簡報檔案中的 html 與 markdown, 也可用來編輯 Pelican 網誌 markdown 與轉檔, 並且在電腦輔助設計與分析過程中, 可以用來解讀 CoppeliaSim XML 格式檔案.</p>
 <p>因為 Python 3.12.0 環境下 Leo Editor 還無法正常透過 pip 安裝, 因此必須手動安裝 PyQt5 之後, 再使用 pip install leo, 所完成的 Python 3.12.0: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYf6RiAqXAFJllAizi_-iZ4BT9ZEn8-bT2V8TVjd9p446Q?e=NSCciC">Python312_leo_664_PyQt5.7z</a><span> </span>(需要下載密碼)</p>
@@ -1028,7 +1033,7 @@ int main() {
 <p><a href="https://github.com/ShareX/ShareX/releases">ShareX</a><span> </span>為螢幕畫面取像或錄影套件, 可以擷取電腦畫面任一區域存為影像檔, 或者結合語音說明與滑鼠操作錄製說明影片.</p>
 <p><a href="https://github.com/obsproject/obs-studio/releases">OBS</a><span> </span>為電腦廣播製作系統, 可以結合各種語音、圖像與影片製作出多元的電腦操作說明影片.</p>
 <p>Wink 與 ShareX 都需要<span> </span><a href="https://ffmpeg.org/download.html#build-windows">ffmpeq.exe</a>.</p>
-<h1>w11</h1>
+<h2>w11</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 #include &lt;stdio.h&gt;
  
@@ -1082,8 +1087,7 @@ int main() {
  
     return 0;
 }</pre>
-<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
-<h1>w12</h1>
+<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p><h2>w12</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">	#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -1231,8 +1235,9 @@ int main() {
 }</pre>
 <p><img alt="" height="300" src="/images/hellogd2.png" width="400"/></p>
 <p></p>
-<h1>W13</h1>
-<p>一開始都聽不懂老師的意思，只能不停地向同學請教，想辦法不要落後，努力跟上進度，抱持虛心求教的心態，為了要提升自己的能力，就要一直反覆看老師上課影的片，很常遇到不懂的問題，不知該如何解決就會去問ChatGPT，雖然到現在還是會常常看不懂問題在哪裡，但是只要一步一腳印地去尋找問題，就會發現一點之蛛絲馬跡，然後再去解決問題，在解決不了就只能去尋求同學的幫助，雖然我很想問同組的，但是同組不太會只能跟不同組的虛心求教，也學到一些之前從未接觸到的東西，例如:近端、遠端、架設個人網站，帶著隨身碟就可以編輯網站等。     計算機這一門課，不只可以寫程式還可以了解程式。還可以培養讓我有自行解決問題的能力，真的獲益良多，雖然有些時候還是不得不尋求幫助，但也是不得已的時候會這麼做，不然一定是自己想辦法去解決，還能提升邏輯思考的能力，還有就算做錯只要留下記錄，搞不好會在不知不覺間開閉自己的道路，就像威爾鋼，就是這麼被發明出來的，可能乍看之下沒有什麼，其實可能有其他用處，真是受益匪淺。而且在不斷地做國旗中，也越做越有心得，不再像當初一樣懵懵懂懂</p><h1>w15</h1>
+<h2>w13</h2>
+<p>一開始都聽不懂老師的意思，只能不停地向同學請教，想辦法不要落後，努力跟上進度，抱持虛心求教的心態，為了要提升自己的能力，就要一直反覆看老師上課影的片，很常遇到不懂的問題，不知該如何解決就會去問ChatGPT，雖然到現在還是會常常看不懂問題在哪裡，但是只要一步一腳印地去尋找問題，就會發現一點之蛛絲馬跡，然後再去解決問題，在解決不了就只能去尋求同學的幫助，雖然我很想問同組的，但是同組不太會只能跟不同組的虛心求教，也學到一些之前從未接觸到的東西，例如:近端、遠端、架設個人網站，帶著隨身碟就可以編輯網站等。     計算機這一門課，不只可以寫程式還可以了解程式。還可以培養讓我有自行解決問題的能力，真的獲益良多，雖然有些時候還是不得不尋求幫助，但也是不得已的時候會這麼做，不然一定是自己想辦法去解決，還能提升邏輯思考的能力，還有就算做錯只要留下記錄，搞不好會在不知不覺間開閉自己的道路，就像威爾鋼，就是這麼被發明出來的，可能乍看之下沒有什麼，其實可能有其他用處，真是受益匪淺。而且在不斷地做國旗中，也越做越有心得，不再像當初一樣懵懵懂懂</p>
+<h2>w15</h2>
 <p><img alt="" height="225" src="/images/26.png" width="400"/></p>
 <div>1) 根據<span> </span><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EVcefUI2zPpAmP6lnLWLEAoBCBznMnvFpsNE-1VVFGvVZQ?e=goiPpP&amp;isSPOFile=1" rel="noreferrer noopener" tabindex="-1" target="_blank" title="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/evcefui2zppamp6lnlwleaobcbznmnvfpsne-1vvfgvvzq?e=goippp">roc_list_coord_flag.7z</a><span> </span>程式內容所印出的六組 ABED 等繪製 ROC 國旗白日圖案中的菱形四個關鍵點, 請直接在青天與滿地紅的圖案中, 利用白色作為畫線顏色, 將第二組的 ABED 等四個點的座標, 以直線相連.</div>
 <div>
@@ -1452,7 +1457,8 @@ void draw_roc_flag(gdImagePtr img) {
   }</pre>
 <p><video controls="controls" height="630" width="1004">
 <source src="/images/4.mp4" type="video/mp4"/></video></p>
-</div><h1>ANSIC</h1>
+</div>
+<h2>ANSIC</h2>
 <p>1.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1555,7 +1561,18 @@ int main(int argc, char** argv) {
 <p>result = x * y; // 計算 'x' 和 'y' 的乘積</p>
 <p>// 印出乘積<br/> printf("上述兩個整數的乘積 = %d\n", result);<br/>}</p>
 <p><img alt="" height="149" src="/images/10.png" width="495"/></p>
-<h1>NOTE</h1><h1>C.EX</h1>
+<h2>NOTE</h2>
+<h3>KEY</h3>
+<p>使用puttygen.exe定位主機位置獲得key(點Generate)</p>
+<p><img alt="" height="288" src="https://41223136.github.io/cp2023/images/puttygen.png" width="400"/></p>
+<p>點選之後並在視窗內移動</p>
+<p><img alt="" height="288" src="https://41223136.github.io/cp2023/images/puttygen1.png" width="400"/></p>
+<p>複製ssh-rsa的內容<span>全部</span></p>
+<p>再到github帳號setting的ssh and gpg keys新增一把key</p>
+<p>把剛剛複製的key-rsa貼上之後點save private key 即可!</p>
+<p>儲存到<span>tinyc-data-home<span> </span></span>名稱:學號</p>
+<p>將鑰匙儲存在自己的USB當中</p>
+<h2>C.EX</h2>
 <p>WEEK1</p>
 <p>1.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
@@ -1927,7 +1944,8 @@ int main()
  
     return 0;
 }</pre>
-<p><img alt="" height="72" src="/images/e.ex-10.png" width="307"/></p><h1>Brython</h1>
+<p><img alt="" height="72" src="/images/e.ex-10.png" width="307"/></p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
