@@ -1,41 +1,47 @@
 #include <stdio.h>
 #include <gd.h>
 
-int main() {
+#define WIDTH 900
+#define HEIGHT 600
+#define BLUE 0x005CBF    // Blue color
+#define WHITE 0xFFFFFF   // White color
+#define RED 0xED1C24     // Red color
+
+void drawIcelandFlag() {
     gdImagePtr im;
-    FILE *pngout;
+    FILE *output;
 
-    int width = 900;  // 圖像寬度
-    int height = 600; // 圖像高度
+    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
+    output = fopen("iceland_flag.png", "wb");
 
-    im = gdImageCreateTrueColor(width, height);
+    // Allocate colors
+    int blueIndex = gdImageColorAllocate(im, (BLUE >> 16) & 0xFF, (BLUE >> 8) & 0xFF, BLUE & 0xFF);
+    int whiteIndex = gdImageColorAllocate(im, (WHITE >> 16) & 0xFF, (WHITE >> 8) & 0xFF, WHITE & 0xFF);
+    int redIndex = gdImageColorAllocate(im, (RED >> 16) & 0xFF, (RED >> 8) & 0xFF, RED & 0xFF);
 
-    // 定義愛爾蘭國旗的顏色
-    int green = gdImageColorAllocate(im, 0, 155, 72);    // 綠色
-    int white = gdImageColorAllocate(im, 255, 255, 255); // 白色
-    int orange = gdImageColorAllocate(im, 255, 127, 0);  // 橙色
+    // Draw blue part (background)
+    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT - 1, BLUE);
 
-    // 填充綠色背景
-    gdImageFilledRectangle(im, 0, 0, width - 1, height - 1, white);
+    // Draw white part
+    int whiteHeight = HEIGHT * 7 / 18;
+    gdImageFilledRectangle(im, 0, HEIGHT / 2 - whiteHeight / 2, WIDTH - 1, HEIGHT / 2 + whiteHeight / 2 - 1, WHITE);
 
-    int stripeWidth = width / 3;
+    // Draw red cross (left aligned)
+    int crossWidth = WIDTH / 8; // Width of the cross
+    int crossHeight = HEIGHT / 18; // Height of the cross
+    int crossX = WIDTH / 10;  // Adjusted value to move the cross towards the left
+    int crossY = (HEIGHT - crossHeight) / 2;
 
-    // 繪製左邊的綠色條紋
-    gdImageFilledRectangle(im, 0, 0, stripeWidth - 1, height - 1, green);
+    gdImageFilledRectangle(im, crossX, 0, crossX + crossWidth - 1, HEIGHT - 1, RED); // Horizontal part of the cross
+    gdImageFilledRectangle(im, crossX, crossY, WIDTH - 1, crossY + crossHeight - 1, RED); // Vertical part of the cross
 
-    // 繪製中間的白色條紋
-    gdImageFilledRectangle(im, stripeWidth, 0, stripeWidth * 2 - 1, height - 1, white);
-
-    // 繪製右邊的橙色條紋
-    gdImageFilledRectangle(im, stripeWidth * 2, 0, width - 1, height - 1, orange);
-
-    // 寫入 PNG 檔案
-    pngout = fopen("ireland_flag.png", "wb");
-    gdImagePng(im, pngout);
-    fclose(pngout);
-
-    // 釋放記憶體
+    // Save the image
+    gdImagePng(im, output);
+    fclose(output);
     gdImageDestroy(im);
+}
 
+int main() {
+    drawIcelandFlag();
     return 0;
 }
