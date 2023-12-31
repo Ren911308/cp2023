@@ -1472,26 +1472,26 @@ void draw_roc_flag(gdImagePtr img) {
 <source src="/images/4.mp4" type="video/mp4"/></video></p>
 </div>
 <h2>ANSIC</h2>
-<p>1.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<h3>1.</h3>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main()  
 {
-    // 印出姓名
-    printf("姓名   : Alexandra Abramov\n"); 
+    // Print Name
+    printf("Name   : 林祐任\n"); 
 
-    // 印出出生日期
-    printf("生日   : 1975年7月14日\n"); 
+    // Print Date of Birth
+    printf("DOB    : December 14, 2004\n"); 
 
-    // 印出手機號碼
-    printf("手機   : 99-9999999999\n"); 
+    // Print Mobile Number
+    printf("Mobile : 0970-295229\n"); 
 
-    // 表示程式成功執行
-    return 0; 
+    // Indicate successful execution
+    return(0); 
 }
 </pre>
-<p><img alt="" height="119" src="/images/1.png" width="332"/></p>
-<p>2.</p>
+<p></p>
+<p></p><h3>2.</h3>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
 int main(int argc, char** argv) {
@@ -1511,7 +1511,7 @@ int main(int argc, char** argv) {
 }
 </pre>
 <p><img alt="" height="72" src="/images/2.png" width="295"/></p>
-<p>3.</p>
+<h3>3.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main() <br/>{<br/> // 印出一行井字號<br/> printf("######\n");</p>
 <p>// 印出一個單獨的井字號<br/> printf("#\n");</p>
@@ -1522,13 +1522,13 @@ int main(int argc, char** argv) {
 <p>// 印出一個單獨的井字號<br/> printf("#\n");</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="218" src="/images/3.png" width="293"/></p>
-<p>4.</p>
+<h3>4.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main() <br/>{<br/> // 宣告並初始化字符變數<br/> char char1 = 'X';<br/> char char2 = 'M';<br/> char char3 = 'L';</p>
 <p>// 印出原始和反轉後的字符<br/> printf("%c%c%c的反轉是%c%c%c\n",<br/> char1, char2, char3,<br/> char3, char2, char1);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="82" src="/images/4.png" width="341"/></p>
-<p>5.</p>
+<h3>5.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>/* <br/> 用於存儲矩形寬度和高度的變數（以英寸為單位）<br/>*/<br/>int width; <br/>int height;</p>
 <p>int area; /* 用於存儲矩形的面積的變數 */<br/>int perimeter; /* 用於存儲矩形的周長的變數 */</p>
@@ -1537,20 +1537,20 @@ int main(int argc, char** argv) {
 <p>/* 計算矩形的面積 */<br/> area = height * width;<br/> printf("矩形的面積 = %d 平方英寸\n", area);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="105" src="/images/5.png" width="508"/></p>
-<p>6.</p>
+<h3>6.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main() {<br/> int radius; /* 用於存儲圓的半徑的變數 */<br/> float area, perimeter; /* 用於存儲圓的面積和周長的變數 */ <br/> radius = 6; /* 將半徑賦值為6 */</p>
 <p>/* 計算圓的周長 */<br/> perimeter = 2 * 3.14 * radius;<br/> printf("圓的周長 = %f 英寸\n", perimeter);</p>
 <p>/* 計算圓的面積 */<br/> area = 3.14 * radius * radius;<br/> printf("圓的面積 = %f 平方英寸\n", area);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="100" src="/images/6.png" width="567"/></p>
-<p>7.</p>
+<h3>7.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a = 125, b = 12345; /* 宣告並初始化整數變數 */<br/> long ax = 1234567890; /* 宣告並初始化長整數變數 */<br/> short s = 4043; /* 宣告並初始化短整數變數 */<br/> float x = 2.13459; /* 宣告並初始化浮點數變數 */<br/> double dx = 1.1415927; /* 宣告並初始化雙精度變數 */<br/> char c = 'W'; /* 宣告並初始化字符變數 */<br/> unsigned long ux = 2541567890; /* 宣告並初始化無符號長整數變數 */</p>
 <p>/* 各種算術運算和類型轉換 */<br/> printf("a + c = %d\n", a + c);<br/> printf("x + c = %f\n", x + c);<br/> printf("dx + x = %f\n", dx + x);<br/> printf("((int) dx) + ax = %ld\n", ((int) dx) + ax);<br/> printf("a + x = %f\n", a + x);<br/> printf("s + b = %d\n", s + b);<br/> printf("ax + b = %ld\n", ax + b);<br/> printf("s + c = %hd\n", s + c);<br/> printf("ax + c = %ld\n", ax + c);<br/> printf("ax + ux = %lu\n", ax + ux);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="295" src="/images/7.png" width="374"/></p>
-<p>8.</p>
+<h3>8.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int days, years, weeks;</p>
 <p>days = 1329; // 總天數</p>
@@ -1558,7 +1558,7 @@ int main(int argc, char** argv) {
 <p>// 印出結果<br/> printf("年數: %d\n", years);<br/> printf("周數: %d\n", weeks);<br/> printf("天數: %d \n", days);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="122" src="/images/8.png" width="307"/></p>
-<p>9.</p>
+<h3>9.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int days, years, weeks;</p>
 <p>days = 1329; // 總天數</p>
@@ -1566,15 +1566,14 @@ int main(int argc, char** argv) {
 <p>// 印出結果<br/> printf("年數: %d\n", years);<br/> printf("周數: %d\n", weeks);<br/> printf("天數: %d \n", days);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="176" src="/images/9.png" width="425"/></p>
-<p>10.</p>
+<h3>10.</h3>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main() <br/>{<br/> int x, y, result; // 宣告兩個整數及其乘積的變數</p>
 <p>// 提示使用者輸入並將其存儲在 'x'<br/> printf("\n輸入第一個整數："); <br/> scanf("%d", &amp;x);</p>
 <p>// 提示使用者輸入並將其存儲在 'y'<br/> printf("輸入第二個整數：");<br/> scanf("%d", &amp;y);</p>
 <p>result = x * y; // 計算 'x' 和 'y' 的乘積</p>
 <p>// 印出乘積<br/> printf("上述兩個整數的乘積 = %d\n", result);<br/>}</p>
-<p><img alt="" height="149" src="/images/10.png" width="495"/></p>
-<h2>NOTE</h2>
+<p><img alt="" height="149" src="/images/10.png" width="495"/></p><h2>NOTE</h2>
 <h3>KEY</h3>
 <p>使用puttygen.exe定位主機位置獲得key(點Generate)</p>
 <p><img alt="" height="288" src="https://41223136.github.io/cp2023/images/puttygen.png" width="400"/></p>

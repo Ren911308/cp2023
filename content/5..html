@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,51 +142,16 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w1~4 << <a href='w1~4.html'>Previous</a> <a href='w6.html'>Next</a> >> w6<br /><h1>w5</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
-// https://blog.csdn.net/weixin_38468077/article/details/101069365
-// http://www.gnuplot.info/demo/
-// https://github.com/sysprog21/rv32emu
-// https://github.com/sysprog21/semu 
-// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3
-// https://cs61c.org/fa23/
-// https://greenteapress.com/wp/think-python-2e/
-// https://github.com/ecalvadi/c99-examples
-// https://github.com/gouravthakur39/beginners-C-program-examples
-// https://github.com/ergenekonyigit/Numerical-Analysis-Examples
-// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf
-// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf
-// https://jsommers.github.io/cbook/cbook.pdf
-// https://jsommers.github.io/cbook/index.html
-// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf
-// http://cslibrary.stanford.edu/101/EssentialC.pdf
-// https://publications.gbdirect.co.uk/c_book/
-// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf
-// ***** execute on replit 
-// cd downloads
-// cc gnuplot_ex1.c -o gnuplot_ex1
-// ./gnuplot_ex1
-#include &lt;stdio.h&gt;
-   
-// 主函式
-int main() {
-    // Start a Gnuplot process using popen
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
-    if (!gnuplotPipe) {
-        fprintf(stderr, "Failed to start Gnuplot.\n");
-        return 1;
-    }
-   
-    // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
-    fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");
-    fprintf(gnuplotPipe, "plot sin(x)");
-    // Close popen
-    pclose(gnuplotPipe);
-   
-    return 0;
-}</pre>
-<p><img alt="" height="200" src="./../images/gnuplot_ex1.png" width="400"/></p><br />w1~4 << <a href='w1~4.html'>Previous</a> <a href='w6.html'>Next</a> >> w6</div>
+    <div id="tipue_search_content">4. << <a href='4..html'>Previous</a> <a href='6..html'>Next</a> >> 6.<br /><h1>5.</h1>
+<p>#include &lt;stdio.h&gt;</p>
+<p>/* <br/> 用於存儲矩形寬度和高度的變數（以英寸為單位）<br/>*/<br/>int width; <br/>int height;</p>
+<p>int area; /* 用於存儲矩形的面積的變數 */<br/>int perimeter; /* 用於存儲矩形的周長的變數 */</p>
+<p>int main() {<br/> /* 為高度和寬度賦值 */<br/> height = 7;<br/> width = 5;</p>
+<p>/* 計算矩形的周長 */<br/> perimeter = 2 * (height + width);<br/> printf("矩形的周長 = %d 英寸\n", perimeter);</p>
+<p>/* 計算矩形的面積 */<br/> area = height * width;<br/> printf("矩形的面積 = %d 平方英寸\n", area);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="105" src="./../images/5.png" width="508"/></p>
+<br />4. << <a href='4..html'>Previous</a> <a href='6..html'>Next</a> >> 6.</div>
         
     <!-- footer -->
       <div class="container">
