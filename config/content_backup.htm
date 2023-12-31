@@ -1412,7 +1412,50 @@ int main() {
 }
 </pre>
 <p><img alt="" height="267" src="/images/belgium_flag.png" width="400"/></p>
-<h3>IRELAND</h3><h2>w10</h2>
+<h3>IRELAND</h3>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+int main() {
+    gdImagePtr im;
+    FILE *pngout;
+
+    int width = 900;  // 圖像寬度
+    int height = 600; // 圖像高度
+
+    im = gdImageCreateTrueColor(width, height);
+
+    // 定義愛爾蘭國旗的顏色
+    int green = gdImageColorAllocate(im, 0, 155, 72);    // 綠色
+    int white = gdImageColorAllocate(im, 255, 255, 255); // 白色
+    int orange = gdImageColorAllocate(im, 255, 127, 0);  // 橙色
+
+    // 填充綠色背景
+    gdImageFilledRectangle(im, 0, 0, width - 1, height - 1, white);
+
+    int stripeWidth = width / 3;
+
+    // 繪製左邊的綠色條紋
+    gdImageFilledRectangle(im, 0, 0, stripeWidth - 1, height - 1, green);
+
+    // 繪製中間的白色條紋
+    gdImageFilledRectangle(im, stripeWidth, 0, stripeWidth * 2 - 1, height - 1, white);
+
+    // 繪製右邊的橙色條紋
+    gdImageFilledRectangle(im, stripeWidth * 2, 0, width - 1, height - 1, orange);
+
+    // 寫入 PNG 檔案
+    pngout = fopen("ireland_flag.png", "wb");
+    gdImagePng(im, pngout);
+    fclose(pngout);
+
+    // 釋放記憶體
+    gdImageDestroy(im);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="267" src="/images/ireland_flag.png" width="400"/></p><h2>w10</h2>
 <p>線上簡報、網誌與多媒體影片製作工具:</p>
 <p><a href="https://leo-editor.github.io/leo-editor/">Leo Editor</a><span> </span>(<a href="https://groups.google.com/g/leo-editor">討論群組</a>) 為大綱管理系統, 可以當作程式開發的 IDE (Integrated Development Environment) 使用, 可用來編輯 reveal.js 簡報檔案中的 html 與 markdown, 也可用來編輯 Pelican 網誌 markdown 與轉檔, 並且在電腦輔助設計與分析過程中, 可以用來解讀 CoppeliaSim XML 格式檔案.</p>
 <p>因為 Python 3.12.0 環境下 Leo Editor 還無法正常透過 pip 安裝, 因此必須手動安裝 PyQt5 之後, 再使用 pip install leo, 所完成的 Python 3.12.0: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYf6RiAqXAFJllAizi_-iZ4BT9ZEn8-bT2V8TVjd9p446Q?e=NSCciC">Python312_leo_664_PyQt5.7z</a><span> </span>(需要下載密碼)</p>

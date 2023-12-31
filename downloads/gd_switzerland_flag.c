@@ -5,34 +5,38 @@ int main() {
     gdImagePtr im;
     FILE *pngout;
 
-    int width = 300;  // 設定圖像寬度
-    int height = 200; // 設定圖像高度
+    int size = 200;    // 图像宽度和高度
 
-    /* 創建一個新的 300x200 圖像 */
-    im = gdImageCreateTrueColor(width, height);
+    im = gdImageCreateTrueColor(size, size);
 
-    /* 定義瑞士國旗的顏色 */
-    int red = gdImageColorAllocate(im, 255, 0, 0);  // 紅色
+    // 定义瑞士国旗的颜色
+    int red = gdImageColorAllocate(im, 255, 0, 0);        // 红色
     int white = gdImageColorAllocate(im, 255, 255, 255);  // 白色
 
-    /* 繪製瑞士國旗，紅色背景 */
-    gdImageFilledRectangle(im, 0, 0, width - 1, height - 1, red);
+    // 填充红色背景
+    gdImageFilledRectangle(im, 0, 0, size - 1, size - 1, red);
 
-    /* 繪製白色十字 */
-    int crossWidth = 20;
-    int crossHeight = 120;
-    int crossPosX = (width - crossWidth) / 2;
-    int crossPosY = (height - crossHeight) / 2;
+    int crossSize = 100; // 十字的大小
 
-    gdImageFilledRectangle(im, crossPosX, 0, crossPosX + crossWidth - 1, height - 1, white);
-    gdImageFilledRectangle(im, 0, crossPosY, width - 1, crossPosY + crossHeight - 1, white);
+    // 计算十字的位置，使其置中
+    int crossPosX = (size - crossSize) / 2;
+    int crossPosY = (size - crossSize) / 2;
 
-    /* 寫入 PNG 檔案 */
+    // 确保十字的中心点在画布中
+    crossPosX += (crossSize % 2 == 0) ? 0 : 1;
+    crossPosY += (crossSize % 2 == 0) ? 0 : 1;
+
+    // 繪製十字的水平線條
+    gdImageFilledRectangle(im, crossPosX, (size - 20) / 2, crossPosX + crossSize - 1, (size + 20) / 2 - 1, white);
+    // 繪製十字的垂直線條
+    gdImageFilledRectangle(im, (size - 20) / 2, crossPosY, (size + 20) / 2 - 1, crossPosY + crossSize - 1, white);
+
+    // 寫入 PNG 檔案
     pngout = fopen("swiss_flag.png", "wb");
     gdImagePng(im, pngout);
     fclose(pngout);
 
-    /* 釋放記憶體 */
+    // 釋放記憶體
     gdImageDestroy(im);
 
     return 0;
