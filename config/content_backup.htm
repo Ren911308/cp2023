@@ -1290,7 +1290,48 @@ int main() {
  
     return 0;
 }</pre>
-<p><img alt="" height="267" src="/images/thai_flag.png" width="400"/></p><h2>w10</h2>
+<p><img alt="" height="267" src="/images/thai_flag.png" width="400"/></p>
+<h3>ITALIAN</h3>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+ 
+int main() {
+    int width = 300;  // 宽度
+    int height = 200; // 高度
+ 
+    gdImagePtr image = gdImageCreateTrueColor(width, height);
+ 
+    if (image == NULL) {
+        printf("Failed to create image.\n");
+        return 1;
+    }
+ 
+    // 确定颜色索引
+    int green = gdImageColorAllocate(image, 0, 128, 0);
+    int white = gdImageColorAllocate(image, 255, 255, 255);
+    int red = gdImageColorAllocate(image, 255, 0, 0);
+ 
+    // 填充颜色
+    gdImageFilledRectangle(image, 0, 0, width / 3, height, green);
+    gdImageFilledRectangle(image, width / 3, 0, (width / 3) * 2, height, white);
+    gdImageFilledRectangle(image, (width / 3) * 2, 0, width, height, red);
+ 
+    FILE *outputFile;
+    outputFile = fopen("./../images/italian_flag.png", "wb");
+ 
+    if (outputFile == NULL) {
+        printf("Failed to open file for writing.\n");
+        return 1;
+    }
+ 
+    gdImagePng(image, outputFile);
+    fclose(outputFile);
+ 
+    gdImageDestroy(image);
+ 
+    return 0;
+}</pre>
+<p></p><h2>w10</h2>
 <p>線上簡報、網誌與多媒體影片製作工具:</p>
 <p><a href="https://leo-editor.github.io/leo-editor/">Leo Editor</a><span> </span>(<a href="https://groups.google.com/g/leo-editor">討論群組</a>) 為大綱管理系統, 可以當作程式開發的 IDE (Integrated Development Environment) 使用, 可用來編輯 reveal.js 簡報檔案中的 html 與 markdown, 也可用來編輯 Pelican 網誌 markdown 與轉檔, 並且在電腦輔助設計與分析過程中, 可以用來解讀 CoppeliaSim XML 格式檔案.</p>
 <p>因為 Python 3.12.0 環境下 Leo Editor 還無法正常透過 pip 安裝, 因此必須手動安裝 PyQt5 之後, 再使用 pip install leo, 所完成的 Python 3.12.0: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYf6RiAqXAFJllAizi_-iZ4BT9ZEn8-bT2V8TVjd9p446Q?e=NSCciC">Python312_leo_664_PyQt5.7z</a><span> </span>(需要下載密碼)</p>
