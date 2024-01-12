@@ -10,18 +10,18 @@ void drawDutchFlag(gdImagePtr im) {
     int white = gdImageColorAllocate(im, 255, 255, 255);
     gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT, white);
 
-    int stripeWidth = WIDTH / 3;
+    int stripeHeight = HEIGHT / 3;
 
-    // Left stripe (Blue)
-    int blue = gdImageColorAllocate(im, 33, 70, 139);
-    gdImageFilledRectangle(im, 0, 0, stripeWidth, HEIGHT, blue);
+    // Top stripe (Red)
+    int red = gdImageColorAllocate(im, 174, 28, 40);
+    gdImageFilledRectangle(im, 0, 0, WIDTH, stripeHeight, red);
 
     // Middle stripe (White)
-    gdImageFilledRectangle(im, stripeWidth, 0, 2 * stripeWidth, HEIGHT, white);
+    gdImageFilledRectangle(im, 0, stripeHeight, WIDTH, 2 * stripeHeight, white);
 
-    // Right stripe (Red)
-    int red = gdImageColorAllocate(im, 174, 28, 40);
-    gdImageFilledRectangle(im, 2 * stripeWidth, 0, WIDTH, HEIGHT, red);
+    // Bottom stripe (Blue)
+    int blue = gdImageColorAllocate(im, 33, 70, 139);
+    gdImageFilledRectangle(im, 0, 2 * stripeHeight, WIDTH, HEIGHT, blue);
 }
 
 int main() {
@@ -36,7 +36,7 @@ int main() {
 
     drawDutchFlag(im);
 
-    out = fopen("dutch_flag_swapped.png", "wb");
+    out = fopen("dutch_flag_corrected.png", "wb");
     if (out == NULL) {
         fprintf(stderr, "Cannot create output file\n");
         gdImageDestroy(im);
@@ -47,7 +47,7 @@ int main() {
     fclose(out);
     gdImageDestroy(im);
 
-    printf("Dutch flag created (swapped colors): dutch_flag_swapped.png\n");
+    printf("Dutch flag created (corrected colors): dutch_flag_corrected.png\n");
 
     return 0;
 }
