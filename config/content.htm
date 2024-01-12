@@ -1561,7 +1561,61 @@ int main() {
 <p><img alt="" height="288" src="/images/iceland_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1004">
 <source src="/images/ICELAND1.mp4" type="video/mp4"/></video></p>
-<h3>AUSTRIAN                           </h3><h2>w9</h2>
+<h3>AUSTRIAN</h3>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;gd.h&gt;
+
+#define WIDTH 600
+#define HEIGHT 400
+
+void drawAustrianFlag(gdImagePtr im) {
+    // Set background color (White)
+    int white = gdImageColorAllocate(im, 255, 255, 255);
+    gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT, white);
+
+    int stripeHeight = HEIGHT / 3;
+
+    // Top stripe (Red)
+    int red = gdImageColorAllocate(im, 237, 41, 57);
+    gdImageFilledRectangle(im, 0, 0, WIDTH, stripeHeight, red);
+
+    // Middle stripe (White)
+    gdImageFilledRectangle(im, 0, stripeHeight, WIDTH, 2 * stripeHeight, white);
+
+    // Bottom stripe (Red)
+    gdImageFilledRectangle(im, 0, 2 * stripeHeight, WIDTH, HEIGHT, red);
+}
+
+int main() {
+    gdImagePtr im;
+    FILE *out;
+
+    im = gdImageCreate(WIDTH, HEIGHT);
+    if (im == NULL) {
+        fprintf(stderr, "Cannot create GD image\n");
+        return 1;
+    }
+
+    drawAustrianFlag(im);
+
+    out = fopen("austrian_flag.png", "wb");
+    if (out == NULL) {
+        fprintf(stderr, "Cannot create output file\n");
+        gdImageDestroy(im);
+        return 1;
+    }
+
+    gdImagePng(im, out);
+    fclose(out);
+    gdImageDestroy(im);
+
+    printf("Austrian flag created: austrian_flag.png\n");
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="267" src="/images/austrian_flag.png" width="400"/></p><h2>w9</h2>
 <p>線上簡報、網誌與多媒體影片製作工具:</p>
 <p><a href="https://leo-editor.github.io/leo-editor/">Leo Editor</a><span> </span>(<a href="https://groups.google.com/g/leo-editor">討論群組</a>) 為大綱管理系統, 可以當作程式開發的 IDE (Integrated Development Environment) 使用, 可用來編輯 reveal.js 簡報檔案中的 html 與 markdown, 也可用來編輯 Pelican 網誌 markdown 與轉檔, 並且在電腦輔助設計與分析過程中, 可以用來解讀 CoppeliaSim XML 格式檔案.</p>
 <p>因為 Python 3.12.0 環境下 Leo Editor 還無法正常透過 pip 安裝, 因此必須手動安裝 PyQt5 之後, 再使用 pip install leo, 所完成的 Python 3.12.0: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYf6RiAqXAFJllAizi_-iZ4BT9ZEn8-bT2V8TVjd9p446Q?e=NSCciC">Python312_leo_664_PyQt5.7z</a><span> </span>(需要下載密碼)</p>
