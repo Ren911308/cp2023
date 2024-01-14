@@ -143,48 +143,48 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">SWITZERLAND << <a href='SWITZERLAND.html'>Previous</a> <a href='AUSTRIAN.html'>Next</a> >> AUSTRIAN<br /><h1>ICELAND</h1>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 #define WIDTH 100
 #define HEIGHT 72
 #define BLUE 0x02529C    // Blue color
 #define WHITE 0xFFFFFF   // White color
 #define RED 0xDC1E35     // Red color
-
+ 
 void drawIcelandFlag() {
     gdImagePtr im;
     FILE *output;
-
+ 
     im = gdImageCreateTrueColor(WIDTH, HEIGHT);
     output = fopen("iceland_flag.png", "wb");
-
+ 
     // Allocate colors
     int blueIndex = gdImageColorAllocate(im, (BLUE &gt;&gt; 16) &amp; 0xFF, (BLUE &gt;&gt; 8) &amp; 0xFF, BLUE &amp; 0xFF);
     int whiteIndex = gdImageColorAllocate(im, (WHITE &gt;&gt; 16) &amp; 0xFF, (WHITE &gt;&gt; 8) &amp; 0xFF, WHITE &amp; 0xFF);
     int redIndex = gdImageColorAllocate(im, (RED &gt;&gt; 16) &amp; 0xFF, (RED &gt;&gt; 8) &amp; 0xFF, RED &amp; 0xFF);
-
+ 
     // Draw blue part (background)
     gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT - 1, blueIndex);
-
+ 
     // Draw white vertical stripe
     gdImageFilledRectangle(im, 18, 0, 18 + 16 - 1, HEIGHT - 1, whiteIndex);
-
+ 
     // Draw white horizontal stripe
     gdImageFilledRectangle(im, 0, 28, WIDTH - 1, 28 + 16 - 1, whiteIndex);
-
+ 
     // Draw red vertical stripe
     gdImageFilledRectangle(im, 22, 0, 22 + 8 - 1, HEIGHT - 1, redIndex);
-
+ 
     // Draw red horizontal stripe
     gdImageFilledRectangle(im, 0, 32, WIDTH - 1, 32 + 8 - 1, redIndex);
-
+ 
     // Save the image
     gdImagePng(im, output);
     fclose(output);
     gdImageDestroy(im);
 }
-
+ 
 int main() {
     drawIcelandFlag();
     return 0;

@@ -167,7 +167,7 @@ img.add_border {
 // cc gnuplot_ex1.c -o gnuplot_ex1
 // ./gnuplot_ex1
 #include &lt;stdio.h&gt;
-   
+    
 // 主函式
 int main() {
     // Start a Gnuplot process using popen
@@ -176,14 +176,14 @@ int main() {
         fprintf(stderr, "Failed to start Gnuplot.\n");
         return 1;
     }
-   
+    
     // Use Gnuplot plotting commands, specify font and output as PNG
     fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
     fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");
     fprintf(gnuplotPipe, "plot sin(x)");
     // Close popen
     pclose(gnuplotPipe);
-   
+    
     return 0;
 }</pre>
 <p><img alt="" height="200" src="./../images/gnuplot_ex1.png" width="400"/></p>
