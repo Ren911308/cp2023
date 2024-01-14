@@ -142,27 +142,39 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='2..html'>Next</a> >> 2.<br /><h1>1.</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+    <div id="tipue_search_content">DUTCH << <a href='DUTCH.html'>Previous</a> <a href='w9.html'>Next</a> >> w9<br /><h1>FRANCE</h1>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
 
-int main()  
-{
-    // Print Name
-    printf("Name   : 林祐任\n"); 
+int main() {
+    int width = 900; // 画布宽度
+    int height = 600; // 画布高度
 
-    // Print Date of Birth
-    printf("DOB    : December 14, 2004\n"); 
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
 
-    // Print Mobile Number
-    printf("Mobile : 0970-295229\n"); 
+    // 定义法国国旗颜色
+    int blue = gdImageColorAllocate(img, 0, 35, 149);  // RGB颜色代码
+    int white = gdImageColorAllocate(img, 255, 255, 255);
+    int red = gdImageColorAllocate(img, 239, 65, 53);
 
-    // Indicate successful execution
-    return(0); 
+    // 填充法国国旗
+    gdImageFilledRectangle(img, 0, 0, width / 3, height, blue);
+    gdImageFilledRectangle(img, width / 3, 0, 2 * width / 3, height, white);
+    gdImageFilledRectangle(img, 2 * width / 3, 0, width, height, red);
+
+    // 保存图片
+    FILE *outfile;
+    outfile = fopen("french_flag.png", "wb");
+    gdImagePng(img, outfile);
+    fclose(outfile);
+
+    // 释放内存
+    gdImageDestroy(img);
+
+    return 0;
 }
 </pre>
-<p><img alt="" height="171" src="./../images/51.c.png" width="400"/></p>
-<p></p>
-<br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='2..html'>Next</a> >> 2.</div>
+<p><img alt="" height="267" src="./../images/french_flag.png" width="400"/></p><br />DUTCH << <a href='DUTCH.html'>Previous</a> <a href='w9.html'>Next</a> >> w9</div>
         
     <!-- footer -->
       <div class="container">
