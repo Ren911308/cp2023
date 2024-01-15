@@ -1233,21 +1233,21 @@ int main() {
 </pre>
 <p><img alt="" height="267" src="/images/latvia_flag.png" width="400"/></p>
 <h3>THAILAND</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
- 
+  
 #define WIDTH 600
 #define HEIGHT 400
- 
+  
 void drawThaiFlag(gdImagePtr im) {
     int white = gdImageColorAllocate(im, 255, 255, 255);
     int indigo = gdImageColorAllocate(im, 46, 49, 146);  // 較深的靛藍色
     int red = gdImageColorAllocate(im, 255, 0, 0);
- 
+  
     // Draw white background
     gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT, white);
- 
+  
     // Calculate stripe heights based on the specified ratio
     int totalStripes = 5;
     int stripeHeights[5] = {1, 1, 2, 1, 1};
@@ -1255,7 +1255,7 @@ void drawThaiFlag(gdImagePtr im) {
     for (int i = 0; i &lt; totalStripes; ++i) {
         totalHeight += stripeHeights[i];
     }
- 
+  
     // Draw stripes
     int startY = 0;
     for (int i = 0; i &lt; totalStripes; ++i) {
@@ -1280,291 +1280,290 @@ void drawThaiFlag(gdImagePtr im) {
         startY += stripeHeight;
     }
 }
- 
+  
 int main() {
     gdImagePtr im;
     FILE *outputFile;
- 
+  
     // Create a new image with specified width and height
     im = gdImageCreate(WIDTH, HEIGHT);
- 
+  
     // Draw the Thai flag on the image
     drawThaiFlag(im);
- 
+  
     // Open a file for writing
     outputFile = fopen("thai_flag.png", "wb");
- 
+  
     // Write the image to the file in PNG format
     gdImagePng(im, outputFile);
- 
+  
     // Close the file
     fclose(outputFile);
- 
+  
     // Free the memory used for the image
     gdImageDestroy(im);
- 
+  
     return 0;
-}</pre>
+}
+</pre>
 <p><img alt="" height="267" src="/images/thai_flag.png" width="400"/></p>
 <h3>ITALIAN</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
- 
+  
 int main() {
     int width = 300;  // 宽度
     int height = 200; // 高度
- 
+  
     gdImagePtr image = gdImageCreateTrueColor(width, height);
- 
+  
     if (image == NULL) {
         printf("Failed to create image.\n");
         return 1;
     }
- 
+  
     // 确定颜色索引
     int green = gdImageColorAllocate(image, 0, 128, 0);
     int white = gdImageColorAllocate(image, 255, 255, 255);
     int red = gdImageColorAllocate(image, 255, 0, 0);
- 
+  
     // 填充颜色
     gdImageFilledRectangle(image, 0, 0, width / 3, height, green);
     gdImageFilledRectangle(image, width / 3, 0, (width / 3) * 2, height, white);
     gdImageFilledRectangle(image, (width / 3) * 2, 0, width, height, red);
- 
+  
     FILE *outputFile;
     outputFile = fopen("./../images/italian_flag.png", "wb");
- 
+  
     if (outputFile == NULL) {
         printf("Failed to open file for writing.\n");
         return 1;
     }
- 
+  
     gdImagePng(image, outputFile);
     fclose(outputFile);
- 
+  
     gdImageDestroy(image);
- 
+  
     return 0;
 }</pre>
 <p><img alt="" height="267" src="/images/italian_flag.png" width="400"/></p>
 <h3>UKRAINE</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
- 
+  
 #define WIDTH 600
 #define HEIGHT 400
 #define YELLOW 0xFFD100  // Yellow color
 #define BLUE 0x0057A6    // Blue color
- 
+  
 void drawUkraineFlag() {
     gdImagePtr im;
     FILE *output;
- 
+  
     im = gdImageCreateTrueColor(WIDTH, HEIGHT);
     output = fopen("ukraine_flag.png", "wb");
- 
+  
     // Allocate yellow and blue colors
     int yellowIndex = gdImageColorAllocate(im, (YELLOW &gt;&gt; 16) &amp; 0xFF, (YELLOW &gt;&gt; 8) &amp; 0xFF, YELLOW &amp; 0xFF);
     int blueIndex = gdImageColorAllocate(im, (BLUE &gt;&gt; 16) &amp; 0xFF, (BLUE &gt;&gt; 8) &amp; 0xFF, BLUE &amp; 0xFF);
- 
+  
     // Draw blue upper half
     gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, blueIndex);
- 
+  
     // Draw yellow lower half
     gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, yellowIndex);
- 
+  
     // Save the image
     gdImagePng(im, output);
     fclose(output);
     gdImageDestroy(im);
 }
- 
+  
 int main() {
     drawUkraineFlag();
     return 0;
-}</pre>
+}
+</pre>
 <p><img alt="" height="267" src="/images/ukraine_flag.png" width="400"/></p>
 <h3>BILGIUM</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
- 
+  
 #define WIDTH 600
 #define HEIGHT 400
 #define BLACK 0x000000  // Black color
 #define YELLOW 0xFFD100 // Yellow color
 #define RED 0xED2939    // Red color
- 
+  
 void drawBelgiumFlag() {
     gdImagePtr im;
     FILE *output;
- 
+  
     im = gdImageCreateTrueColor(WIDTH, HEIGHT);
     output = fopen("belgium_flag.png", "wb");
- 
+  
     // Allocate black, yellow, and red colors
     int blackIndex = gdImageColorAllocate(im, (BLACK &gt;&gt; 16) &amp; 0xFF, (BLACK &gt;&gt; 8) &amp; 0xFF, BLACK &amp; 0xFF);
     int yellowIndex = gdImageColorAllocate(im, (YELLOW &gt;&gt; 16) &amp; 0xFF, (YELLOW &gt;&gt; 8) &amp; 0xFF, YELLOW &amp; 0xFF);
     int redIndex = gdImageColorAllocate(im, (RED &gt;&gt; 16) &amp; 0xFF, (RED &gt;&gt; 8) &amp; 0xFF, RED &amp; 0xFF);
- 
+  
     // Draw black left third
     gdImageFilledRectangle(im, 0, 0, WIDTH / 3 - 1, HEIGHT - 1, blackIndex);
- 
+  
     // Draw yellow middle third
     gdImageFilledRectangle(im, WIDTH / 3, 0, 2 * WIDTH / 3 - 1, HEIGHT - 1, yellowIndex);
- 
+  
     // Draw red right third
     gdImageFilledRectangle(im, 2 * WIDTH / 3, 0, WIDTH - 1, HEIGHT - 1, redIndex);
- 
+  
     // Save the image
     gdImagePng(im, output);
     fclose(output);
     gdImageDestroy(im);
 }
- 
+  
 int main() {
     drawBelgiumFlag();
     return 0;
-}
-</pre>
+}</pre>
 <p><img alt="" height="267" src="/images/belgium_flag.png" width="400"/></p>
 <h3>IRELAND</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 int main() {
     gdImagePtr im;
     FILE *pngout;
-
+ 
     int width = 900;  // 圖像寬度
     int height = 600; // 圖像高度
-
+ 
     im = gdImageCreateTrueColor(width, height);
-
+ 
     // 定義愛爾蘭國旗的顏色
     int green = gdImageColorAllocate(im, 0, 155, 72);    // 綠色
     int white = gdImageColorAllocate(im, 255, 255, 255); // 白色
     int orange = gdImageColorAllocate(im, 255, 127, 0);  // 橙色
-
+ 
     // 填充綠色背景
     gdImageFilledRectangle(im, 0, 0, width - 1, height - 1, white);
-
+ 
     int stripeWidth = width / 3;
-
+ 
     // 繪製左邊的綠色條紋
     gdImageFilledRectangle(im, 0, 0, stripeWidth - 1, height - 1, green);
-
+ 
     // 繪製中間的白色條紋
     gdImageFilledRectangle(im, stripeWidth, 0, stripeWidth * 2 - 1, height - 1, white);
-
+ 
     // 繪製右邊的橙色條紋
     gdImageFilledRectangle(im, stripeWidth * 2, 0, width - 1, height - 1, orange);
-
+ 
     // 寫入 PNG 檔案
     pngout = fopen("ireland_flag.png", "wb");
     gdImagePng(im, pngout);
     fclose(pngout);
-
+ 
     // 釋放記憶體
     gdImageDestroy(im);
-
+ 
     return 0;
-}
-</pre>
+}</pre>
 <p><img alt="" height="267" src="/images/ireland_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1004">
 <source src="/images/IRELAND.mp4" type="video/mp4"/></video></p>
 <p></p>
 <h3>SWITZERLAND</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 int main() {
     gdImagePtr im;
     FILE *pngout;
-
+ 
     int size = 200;    // 图像宽度和高度
-
+ 
     im = gdImageCreateTrueColor(size, size);
-
+ 
     // 定义瑞士国旗的颜色
     int red = gdImageColorAllocate(im, 255, 0, 0);        // 红色
     int white = gdImageColorAllocate(im, 255, 255, 255);  // 白色
-
+ 
     // 填充红色背景
     gdImageFilledRectangle(im, 0, 0, size - 1, size - 1, red);
-
+ 
     int crossSize = 100; // 十字的大小
-
+ 
     // 计算十字的位置，使其置中
     int crossPosX = (size - crossSize) / 2;
     int crossPosY = (size - crossSize) / 2;
-
+ 
     // 确保十字的中心点在画布中
     crossPosX += (crossSize % 2 == 0) ? 0 : 1;
     crossPosY += (crossSize % 2 == 0) ? 0 : 1;
-
+ 
     // 繪製十字的水平線條
     gdImageFilledRectangle(im, crossPosX, (size - 20) / 2, crossPosX + crossSize - 1, (size + 20) / 2 - 1, white);
     // 繪製十字的垂直線條
     gdImageFilledRectangle(im, (size - 20) / 2, crossPosY, (size + 20) / 2 - 1, crossPosY + crossSize - 1, white);
-
+ 
     // 寫入 PNG 檔案
     pngout = fopen("swiss_flag.png", "wb");
     gdImagePng(im, pngout);
     fclose(pngout);
-
+ 
     // 釋放記憶體
     gdImageDestroy(im);
-
+ 
     return 0;
-}
-</pre>
+}</pre>
 <p><img alt="" height="400" src="/images/swiss_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1004">
 <source src="/images/SWITZER1.mp4" type="video/mp4"/></video></p>
 <h3>ICELAND</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 #define WIDTH 100
 #define HEIGHT 72
 #define BLUE 0x02529C    // Blue color
 #define WHITE 0xFFFFFF   // White color
 #define RED 0xDC1E35     // Red color
-
+ 
 void drawIcelandFlag() {
     gdImagePtr im;
     FILE *output;
-
+ 
     im = gdImageCreateTrueColor(WIDTH, HEIGHT);
     output = fopen("iceland_flag.png", "wb");
-
+ 
     // Allocate colors
     int blueIndex = gdImageColorAllocate(im, (BLUE &gt;&gt; 16) &amp; 0xFF, (BLUE &gt;&gt; 8) &amp; 0xFF, BLUE &amp; 0xFF);
     int whiteIndex = gdImageColorAllocate(im, (WHITE &gt;&gt; 16) &amp; 0xFF, (WHITE &gt;&gt; 8) &amp; 0xFF, WHITE &amp; 0xFF);
     int redIndex = gdImageColorAllocate(im, (RED &gt;&gt; 16) &amp; 0xFF, (RED &gt;&gt; 8) &amp; 0xFF, RED &amp; 0xFF);
-
+ 
     // Draw blue part (background)
     gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT - 1, blueIndex);
-
+ 
     // Draw white vertical stripe
     gdImageFilledRectangle(im, 18, 0, 18 + 16 - 1, HEIGHT - 1, whiteIndex);
-
+ 
     // Draw white horizontal stripe
     gdImageFilledRectangle(im, 0, 28, WIDTH - 1, 28 + 16 - 1, whiteIndex);
-
+ 
     // Draw red vertical stripe
     gdImageFilledRectangle(im, 22, 0, 22 + 8 - 1, HEIGHT - 1, redIndex);
-
+ 
     // Draw red horizontal stripe
     gdImageFilledRectangle(im, 0, 32, WIDTH - 1, 32 + 8 - 1, redIndex);
-
+ 
     // Save the image
     gdImagePng(im, output);
     fclose(output);
     gdImageDestroy(im);
 }
-
+ 
 int main() {
     drawIcelandFlag();
     return 0;
@@ -1574,115 +1573,114 @@ int main() {
 <p><video controls="controls" height="630" width="1004">
 <source src="/images/ICELAND1.mp4" type="video/mp4"/></video></p>
 <h3>AUSTRIAN</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 #define WIDTH 600
 #define HEIGHT 400
-
+ 
 void drawAustrianFlag(gdImagePtr im) {
     // Set background color (White)
     int white = gdImageColorAllocate(im, 255, 255, 255);
     gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT, white);
-
+ 
     int stripeHeight = HEIGHT / 3;
-
+ 
     // Top stripe (Red)
     int red = gdImageColorAllocate(im, 237, 41, 57);
     gdImageFilledRectangle(im, 0, 0, WIDTH, stripeHeight, red);
-
+ 
     // Middle stripe (White)
     gdImageFilledRectangle(im, 0, stripeHeight, WIDTH, 2 * stripeHeight, white);
-
+ 
     // Bottom stripe (Red)
     gdImageFilledRectangle(im, 0, 2 * stripeHeight, WIDTH, HEIGHT, red);
 }
-
+ 
 int main() {
     gdImagePtr im;
     FILE *out;
-
+ 
     im = gdImageCreate(WIDTH, HEIGHT);
     if (im == NULL) {
         fprintf(stderr, "Cannot create GD image\n");
         return 1;
     }
-
+ 
     drawAustrianFlag(im);
-
+ 
     out = fopen("austrian_flag.png", "wb");
     if (out == NULL) {
         fprintf(stderr, "Cannot create output file\n");
         gdImageDestroy(im);
         return 1;
     }
-
+ 
     gdImagePng(im, out);
     fclose(out);
     gdImageDestroy(im);
-
+ 
     printf("Austrian flag created: austrian_flag.png\n");
-
+ 
     return 0;
-}
-</pre>
+}</pre>
 <p><img alt="" height="267" src="/images/austrian_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1004">
 <source src="/images/Austrian.mp4" type="video/mp4"/>
 <source src="/images/Austrian.mp4" type="video/mp4"/></video></p>
 <h3>DUTCH</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 #define WIDTH 600
 #define HEIGHT 400
-
+ 
 void drawDutchFlag(gdImagePtr im) {
     // Set background color (White)
     int white = gdImageColorAllocate(im, 255, 255, 255);
     gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT, white);
-
+ 
     int stripeHeight = HEIGHT / 3;
-
+ 
     // Top stripe (Red)
     int red = gdImageColorAllocate(im, 174, 28, 40);
     gdImageFilledRectangle(im, 0, 0, WIDTH, stripeHeight, red);
-
+ 
     // Middle stripe (White)
     gdImageFilledRectangle(im, 0, stripeHeight, WIDTH, 2 * stripeHeight, white);
-
+ 
     // Bottom stripe (Blue)
     int blue = gdImageColorAllocate(im, 33, 70, 139);
     gdImageFilledRectangle(im, 0, 2 * stripeHeight, WIDTH, HEIGHT, blue);
 }
-
+ 
 int main() {
     gdImagePtr im;
     FILE *out;
-
+ 
     im = gdImageCreate(WIDTH, HEIGHT);
     if (im == NULL) {
         fprintf(stderr, "Cannot create GD image\n");
         return 1;
     }
-
+ 
     drawDutchFlag(im);
-
+ 
     out = fopen("dutch_flag_corrected.png", "wb");
     if (out == NULL) {
         fprintf(stderr, "Cannot create output file\n");
         gdImageDestroy(im);
         return 1;
     }
-
+ 
     gdImagePng(im, out);
     fclose(out);
     gdImageDestroy(im);
-
+ 
     printf("Dutch flag created (corrected colors): dutch_flag_corrected.png\n");
-
+ 
     return 0;
 }
 </pre>
@@ -1691,37 +1689,36 @@ int main() {
 <source src="/images/dutch.mp4" type="video/mp4"/>
 <source src="/images/dutch.mp4" type="video/mp4"/></video></p>
 <h3>FRANCE</h3>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-
+ 
 int main() {
     int width = 900; // 画布宽度
     int height = 600; // 画布高度
-
+ 
     gdImagePtr img = gdImageCreateTrueColor(width, height);
-
+ 
     // 定义法国国旗颜色
     int blue = gdImageColorAllocate(img, 0, 35, 149);  // RGB颜色代码
     int white = gdImageColorAllocate(img, 255, 255, 255);
     int red = gdImageColorAllocate(img, 239, 65, 53);
-
+ 
     // 填充法国国旗
     gdImageFilledRectangle(img, 0, 0, width / 3, height, blue);
     gdImageFilledRectangle(img, width / 3, 0, 2 * width / 3, height, white);
     gdImageFilledRectangle(img, 2 * width / 3, 0, width, height, red);
-
+ 
     // 保存图片
     FILE *outfile;
     outfile = fopen("french_flag.png", "wb");
     gdImagePng(img, outfile);
     fclose(outfile);
-
+ 
     // 释放内存
     gdImageDestroy(img);
-
+ 
     return 0;
-}
-</pre>
+}</pre>
 <p><img alt="" height="267" src="/images/french_flag.png" width="400"/></p>
 <h2>w9</h2>
 <p>線上簡報、網誌與多媒體影片製作工具:</p>
