@@ -1788,7 +1788,40 @@ int main() {
 }
 </pre>
 <p><img alt="" height="267" src="/images/hungary_flag.png" width="400"/></p>
-<h3>LUXEMBOURG</h3><h2>w9</h2>
+<h3>LUXEMBOURG</h3>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+
+int main() {
+    int width = 600; // 画布宽度
+    int height = 400; // 画布高度
+
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+
+    // 定义盧森堡國旗颜色
+    int red = gdImageColorAllocate(img, 206, 17, 38);  // RGB颜色代码
+    int white = gdImageColorAllocate(img, 255, 255, 255);
+    int lightBlue = gdImageColorAllocate(img, 153, 194, 224);  // 淡藍色
+
+    // 填充盧森堡國旗
+    gdImageFilledRectangle(img, 0, 0, width, height / 3, red);
+    gdImageFilledRectangle(img, 0, height / 3, width, 2 * height / 3, white);
+    gdImageFilledRectangle(img, 0, 2 * height / 3, width, height, lightBlue);
+
+    // 保存图片
+    FILE *outfile;
+    outfile = fopen("luxembourg_flag.png", "wb");
+    gdImagePng(img, outfile);
+    fclose(outfile);
+
+    // 释放内存
+    gdImageDestroy(img);
+
+    return 0;
+}
+</pre>
+<p><img alt="" height="267" src="/images/luxembourg_flag.png" width="400"/></p>
+<p></p><h2>w9</h2>
 <p>線上簡報、網誌與多媒體影片製作工具:</p>
 <p><a href="https://leo-editor.github.io/leo-editor/">Leo Editor</a><span> </span>(<a href="https://groups.google.com/g/leo-editor">討論群組</a>) 為大綱管理系統, 可以當作程式開發的 IDE (Integrated Development Environment) 使用, 可用來編輯 reveal.js 簡報檔案中的 html 與 markdown, 也可用來編輯 Pelican 網誌 markdown 與轉檔, 並且在電腦輔助設計與分析過程中, 可以用來解讀 CoppeliaSim XML 格式檔案.</p>
 <p>因為 Python 3.12.0 環境下 Leo Editor 還無法正常透過 pip 安裝, 因此必須手動安裝 PyQt5 之後, 再使用 pip install leo, 所完成的 Python 3.12.0: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EYf6RiAqXAFJllAizi_-iZ4BT9ZEn8-bT2V8TVjd9p446Q?e=NSCciC">Python312_leo_664_PyQt5.7z</a><span> </span>(需要下載密碼)</p>
